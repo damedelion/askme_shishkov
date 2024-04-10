@@ -1,0 +1,35 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block content %}
+        <div class="d-flex gap-3 align-items-center mb-3">
+          <h1>New Question</h1>
+        </div>
+        <div class="col-8">
+          <div class="row mb-3">
+            <div class="col-sm-2 col-form-label">Title</div>
+            <div class="col-sm-10">
+              <input class="form-control" placeholder="Enter title">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-2 col-form-label">Text</div>
+            <div class="col-sm-10">
+              <textarea class="form-control" placeholder="Enter your question" style="height: 200px"></textarea>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-2 col-form-label">Tags</div>
+            <div class="col-sm-10">
+              <input class="form-control" placeholder="Enter tags for question">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-2 col-form-label"></div>
+            <div class="col-sm-10 mt-2">
+              <button class="btn btn-primary" type="submit">Button</button>
+            </div>
+          </div>
+        </div>
+    </form>
+{% endblock %}

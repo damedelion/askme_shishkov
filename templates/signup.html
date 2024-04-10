@@ -1,0 +1,56 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block content %}
+      <div class="row">
+        <div class="d-flex gap-3 align-items-center mb-3">
+          <h1>Sign Up</h1>
+        </div>
+        <div class="col-8">
+          <div class="mt-3 mb-3 invalid-feedback d-flex align-items-start">
+            Sorry, wrong password!
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-2 col-form-label">Login</div>
+            <div class="col-sm-10">
+              <input class="form-control" required>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-2 col-form-label">Email</div>
+            <div class="col-sm-10">
+              <input class="form-control" required>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-2 col-form-label">Nickname</div>
+            <div class="col-sm-10">
+              <input class="form-control" required>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-2 col-form-label">Password</div>
+            <div class="col-sm-10">
+              <input class="form-control is-invalid" required>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-2 col-form-label">Repeat password</div>
+            <div class="col-sm-10 w-50">
+              <input class="form-control" required>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-2 col-form-label">Upload avatar</div>
+            <div class="col-sm-10 input-group w-50">
+              <input type="file" class="form-control" required>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-2 col-form-label"></div>
+            <div class="col-sm-10 mt-2">
+              <button class="btn btn-primary" type="submit">Button</button>
+            </div>
+          </div>
+        </div>
+  {% endblock %}

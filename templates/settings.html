@@ -1,0 +1,40 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block content %}
+        <div class="col-8">
+          <div class="d-flex gap-3 align-items-center mb-3">
+            <h1>Settings: Dr.Pepper</h1>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-2 col-form-label">Login</div>
+            <div class="col-sm-10">
+              <input class="form-control">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-2 col-form-label">Email</div>
+            <div class="col-sm-10">
+              <input class="form-control">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-2 col-form-label">Nickname</div>
+            <div class="col-sm-10">
+              <input class="form-control">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-2 col-form-label">Upload avatar</div>
+            <div class="col-sm-10 input-group w-50">
+              <input type="file" class="form-control">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-2 col-form-label"></div>
+            <div class="col-sm-10 mt-2">
+              <button class="btn btn-primary" type="submit">Button</button>
+            </div>
+          </div>
+        </div>
+{% endblock %}
