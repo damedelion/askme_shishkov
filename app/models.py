@@ -20,12 +20,18 @@ class Profile(models.Model):
 class Tag(models.Model):
     name = models.CharField(max_length=255)
 
+    def __str__(self):
+        return self.name
+
 class Question(models.Model):
     title = models.CharField(null=True,max_length=255)
     text = models.CharField(max_length=255)
     author = models.ForeignKey(Profile, null=True, on_delete=models.PROTECT)
     tag = models.ManyToManyField(Tag)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
 
     objects = QuestionManager()
 
@@ -36,6 +42,9 @@ class Answer(models.Model):
     is_correct = models.BooleanField(null=True)
     question = models.ForeignKey(Question, null=True, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.text
 
     objects = AnswerManager()
 
