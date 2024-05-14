@@ -9,7 +9,7 @@
       </div>
       <div class="col-8">
         {% for question in questions %}
-            {% include "layouts/question.html" with item=question %}
+            {% include "layouts/question.html" with item=question tags=question.tag.all %}
         {% endfor %}
         
 
