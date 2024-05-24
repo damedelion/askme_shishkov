@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'django_bootstrap5'
 ]
 
 MIDDLEWARE = [
@@ -108,6 +109,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -129,6 +132,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_ROOT = BASE_DIR / 'uploads'
+MEDIA_URL = '/uploads/'
 
 STATICFILES_DIRS = [
     BASE_DIR / "static"

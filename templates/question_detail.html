@@ -1,31 +1,36 @@
-{% extends "layouts/base.html" %}
+{% extends 'layouts/base.html' %}
 {% load static %}
-
+{% load django_bootstrap5 %}
 
 {% block content %}
-      <div class="d-flex gap-3 align-items-center mb-3">
-        <h1>Questions</h1>
-      </div>
-      <div class="col-8">
+  <div class="d-flex gap-3 align-items-center mb-3">
+    <h1>Questions</h1>
+  </div>
+  <div class="col-8">
+    {% include 'layouts/question.html' with item=question tags=question.tag.all %}
 
-          {% include "layouts/question.html" with item=question tags=question.tag.all %}
+    <hr />
+    {% for answer in answers %}
+      {% include 'layouts/answer.html' with item=answer author=answer.author %}
+    {% endfor %}
 
-          <hr>
-          {% for answer in answers %}
-            {% include "layouts/answer.html" with item=answer %}
-          {% endfor %}
+    {% include 'layouts/pagination.html' with page_obj=answers %}
 
-          {% include "layouts/pagination.html" with page_obj=answers %}
-        
-          <hr class="mt-2 mb-3">
+    <hr class="mt-2 mb-3" />
 
-          <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
-              style="height: 100px"></textarea>
-            <label for="floatingTextarea">Leave a comment here</label>
-          </div>
-          <div class="col-12 mt-2">
-            <button class="btn btn-primary" type="submit">Button</button>
-          </div>
-      </div>
+    {% comment %} <div class="form-floating">
+      <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+      <label for="floatingTextarea">Leave a comment here</label>
+    </div>
+    <div class="col-12 mt-2">
+      <button class="btn btn-primary" type="submit">Button</button>
+    </div> {% endcomment %}
+    <form method="post" action="">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+
+      {% bootstrap_button button_type='submit' content='Answer' %}
+      <div class='mb-3'></div>
+    </form>
+  </div>
 {% endblock %}
