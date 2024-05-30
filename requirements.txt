@@ -5,9 +5,11 @@ Django==5.0.4
 django-bootstrap5==24.2
 django-extensions==3.2.3
 executing==2.0.1
+gunicorn==22.0.0
 ipython==8.24.0
 jedi==0.19.1
 matplotlib-inline==0.1.7
+packaging==24.0
 parso==0.8.4
 pexpect==4.9.0
 pillow==10.3.0
